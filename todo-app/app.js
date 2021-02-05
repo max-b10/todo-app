@@ -49,18 +49,21 @@ const renderToDos = function (todos, filters) {
 };
 renderToDos(todos, filters);
 
-//Change text content of event taregt (the button) when clicked.
-document.querySelector("#add-todo").addEventListener("click", function (e) {
-  e.target.textContent = "To Do Added";
-});
-// Listen for To Do text change.
-document
-  .querySelector("#new-todo-text")
-  .addEventListener("input", function (e) {
-    console.log(e.target.value);
-  });
-
 document.querySelector("#search-text").addEventListener("input", function (e) {
   filters.searchText = e.target.value;
   renderToDos(todos, filters);
 });
+
+// Stopping default behaviour(submission) of the submit button field.
+// Then console logging the createToDo value.
+document
+  .querySelector("#createToDoForm")
+  .addEventListener("submit", function (e) {
+    e.preventDefault();
+    todos.push({
+      text: e.target.elements.text.value,
+      completed: false,
+    });
+    renderToDos(todos, filters);
+    e.target.elements.text.value = "";
+  });
