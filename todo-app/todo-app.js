@@ -21,6 +21,7 @@ document
     e.preventDefault();
     // Push a new object to the todos array:
     todos.push({
+      id: uuidv4(),
       text: e.target.elements.text.value,
       completed: false,
     });
