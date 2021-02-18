@@ -4,23 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do App</title>
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <link rel="icon" href="/images/favicon.png" />
   </head>
   <body>
-    <h1>Todo App</h1>
+    <div class="header">
+      <div class="container">
+        <h1 class="header__title">Todo App</h1>
+        <h2 class="header__subtitle">What do you need to do?</h2>
+        <h6>(Tick todo if completed)</h6>
+      </div>
+    </div>
+    <div class="actions">
+      <div class="actions__container">
+        <input
+          type="text"
+          class="input"
+          placeholder="Search Todos"
+          id="search-text"
+        />
+        <label class="checkbox">
+          <input type="checkbox" name="" id="hideCompleted" />
+          Hide Completed</label
+        >
+      </div>
+    </div>
 
-    <input type="text" placeholder="Search Todos" id="search-text" />
-    <label>
-      <input type="checkbox" name="" id="hideCompleted" />
-      Hide Completed</label
-    >
-    <div id="todos"></div>
+    <div class="container">
+      <div id="todos"></div>
+      <form id="createTodoForm">
+        <input
+          type="text"
+          class="input"
+          name="text"
+          placeholder="Enter new Todo"
+        />
+        <button class="button">Add Todo</button>
+      </form>
+    </div>
 
-    <form id="createTodoForm">
-      <input type="text" name="text" placeholder="Enter new Todo" />
-      <button>Add Todo</button>
-    </form>
     <script src="https://wzrd.in/standalone/uuid%2Fv4@latest" ;></script>
-    <script src="todo-functions.js"></script>
-    <script src="todo-app.js"></script>
+    <script src="/scripts/todo-functions.js"></script>
+    <script src="/scripts/todo-app.js"></script>
   </body>
 </html>
