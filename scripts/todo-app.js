@@ -1,5 +1,10 @@
 "use strict";
 
+const portfolioButton = document.querySelector(".return-button");
+portfolioButton.addEventListener("click", () => {
+  window.location.replace("https://portfoliomax.netlify.app/");
+});
+
 const todos = getSavedTodos();
 
 // A filters object acting as one of the parameters in the renderToDos function.
